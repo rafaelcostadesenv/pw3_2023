@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 public class Categoria extends AbstractEntity {
     private String nome;
+    
 }

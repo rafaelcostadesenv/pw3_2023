@@ -33,4 +33,18 @@ public class CategoriaController {
 
         return ResponseEntity.ok(categoriaSalva);
     }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public ResponseEntity<Categoria> delete(@RequestBody Categoria categoria) {
+        Categoria categoriaDelete = service.delete(categoria);
+
+        return ResponseEntity.ok(categoriaDelete);
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public ResponseEntity<Categoria> update(@RequestBody Categoria categoria) {
+        Categoria categoriaUpdate = service.updateById(categoria);
+
+        return ResponseEntity.ok(categoriaUpdate);
+    }
 }
