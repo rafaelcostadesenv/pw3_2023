@@ -23,9 +23,14 @@ public class CategoriaService {
         return repository.save(categoria);
     }
 
+    public Categoria findById(Long id) {
+        return repository.findById(id).get();
+    }
+
     public Categoria delete(Categoria categoria) {
+        Categoria categoriaOld = findById(categoria.getId());
         repository.delete(categoria);
-        return categoria;
+        return categoriaOld;
     }
 
     public Categoria updateById(Categoria categoria) {
@@ -41,10 +46,4 @@ public class CategoriaService {
             return new Categoria();
         }
     }
-
-    // public Categoria updateById(Categoria categoria) {
-    //     Categoria categoriaAtualizada = repository.findById(categoria.getId());
-    //     categoriaAtualizada.setNome(categoria.getNome());
-    //     return repository.save(categoriaAtualizada);
-    // }
 }
