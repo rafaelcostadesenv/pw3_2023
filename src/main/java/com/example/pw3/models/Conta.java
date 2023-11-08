@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Conta extends AbstractEntity {
-    static final boolean TIPO_DESPESA = true;
-    static final boolean TIPO_RECEITA = false;
-    static final boolean STATUS_OK = true;
-    static final boolean STATUS_PENDENTE = false;
+    public static final boolean TIPO_DESPESA = true;
+    public static final boolean TIPO_RECEITA = false;
+    public static final boolean STATUS_OK = true;
+    public static final boolean STATUS_PENDENTE = false;
 
     @ManyToOne
     private Categoria categoria;
